@@ -46,7 +46,7 @@ begin
 
   en_reg_input_w <= s_axis_valid and en_data_reg_i;
 
-  process (all)
+  process (s_axis_rst, s_axis_clk, en_reg_input_w)
   begin
     if (s_axis_rst = '1') then 
       m_axis_last <= '0';

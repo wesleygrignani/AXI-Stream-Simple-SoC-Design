@@ -33,7 +33,7 @@ architecture rtl of control is
 begin
   
   -- State register 
-  process (all)
+  process (s_axis_rst, s_axis_clk)
   begin
     if (s_axis_rst = '1') then 
       state_r <= wait_s; 
@@ -43,7 +43,7 @@ begin
   end process;
   
   -- Next state transitions 
-  process (all)
+  process (s_axis_valid, m_axis_ready)
   begin
     case state_r is
       -- Initial State (Wait for DMA to input a valid data)

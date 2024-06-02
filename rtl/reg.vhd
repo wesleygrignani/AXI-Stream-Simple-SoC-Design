@@ -15,7 +15,7 @@ architecture rtl of reg is
 
 begin
 
-  process (all)
+  process (rst_i, clk_i, ena_i)
   begin
     if (rst_i = '1') then 
       data_o <= (others => '0');
