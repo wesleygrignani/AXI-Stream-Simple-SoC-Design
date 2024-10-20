@@ -43,7 +43,7 @@ begin
   end process;
   
   -- Next state transitions 
-  process (s_axis_valid, m_axis_ready)
+  process (s_axis_valid, m_axis_ready, state_r)
   begin
     case state_r is
       -- Initial State (Wait for DMA to input a valid data)

@@ -7,6 +7,7 @@
 
 library ieee;
 use ieee.std_logic_1164.all;
+use ieee.std_logic_unsigned.all;
 
 entity datapath is
   port (
@@ -68,7 +69,7 @@ begin
   );
 
   -- Perform your calculation here 
-  calc_w <= data_w;
+  calc_w <= data_w + 10;
 
   -- Output data register
   calc_reg : reg
